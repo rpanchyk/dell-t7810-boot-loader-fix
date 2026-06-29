@@ -47,7 +47,7 @@ The final installation result looks like this:
 To reset `RP2040` to the original state follow the next steps.
 
 ### Step 1
-Download [flash_nuke](https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/circuitpython#flash-resetting-uf2-3083182) `UF2` file (or see [files](files) folder).
+Download [nuke_universal](https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/circuitpython#flash-resetting-uf2-3083182) `UF2` file (or see [files](files) folder).
 
 ### Step 2
 Connect `RP2040` to USB holding `BOOTSEL` button on the board and move `flash_nuke.uf2` file to opened USB storage. This will erase all files on the board.
