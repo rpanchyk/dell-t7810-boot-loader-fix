@@ -28,41 +28,14 @@ Connect `RP2040` to USB holding `BOOTSEL` button on the board and move `UF2` fil
 Download latest [Adafruit CircuitPython Bundle](https://circuitpython.org/libraries) release (or see [files](files) folder).
 
 ### Step 4
-Unpack and copy `lib/adafruit_hid` folder to `lib` folder on board.
+Unpack and copy `lib/adafruit_hid` folder to `lib` folder of board.
 
 ### Step 5
-Create `code.py` file in root folder of board with the following content:
-```python
-import time
-import board
-import digitalio
-import usb_hid
-from adafruit_hid.keyboard import Keyboard
-from adafruit_hid.keycode import Keycode
-
-# Setup on-board LED
-led = digitalio.DigitalInOut(board.LED)
-led.direction = digitalio.Direction.OUTPUT
-
-# Initialize keyboard emulation
-kbd = Keyboard(usb_hid.devices)
-
-# Turn ON the LED (optional)
-led.value = True
-
-# Wait some time (seconds)
-time.sleep(30)
-
-# Virtually press the key
-kbd.send(Keycode.F1)
-
-# Turn OFF the LED (optional)
-led.value = False
-```
+Copy [code.py](code.py) to the root folder of the board.
+Optionally, copy [boot.py](boot.py) to the root folder of the board and change it to your needs (for experts only).
 
 ### Step 6
-Plug `RP2040` board to USB and reboot computer.
-After timeout PC should be booted without additional interaction.
+Reboot the PC. It should be booted without additional interaction.
 
 The final installation result looks like this:
 ![installation](images/installation.jpg)
@@ -72,6 +45,7 @@ The final installation result looks like this:
 
 ## Known issues
 - The solution is not working on reboot, since USB-ports are initialized only on first boot. Use a rear motherboard USB port, avoid powered hubs, expect full power-off between boots.
+- CircuitPython may show two USB drives from one Pico: `CIRCUITPY` (your files) and an empty SD-card slot (for an optional SD breakout - the Pico has no built-in slot). This is normal.
 
 ## Alternative solutions
 There are some alternative methods to fix the issue, like:
