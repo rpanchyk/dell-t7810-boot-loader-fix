@@ -18,11 +18,14 @@ The idea is to press the `F1` key virtually to continue the boot process.
 The [Raspberry Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/) (RP2040) is used in this project:
 ![raspberry-pi-pico-rp2040](images/raspberry-pi-pico-rp2040.jpg)
 
+## Installation
+To install the solution follow the next steps.
+
 ### Step 1
 Download latest [CircuitPython](https://circuitpython.org/board/raspberry_pi_pico/) `UF2` release (or see [files](files) folder).
 
 ### Step 2
-Connect `RP2040` to USB holding `BOOTSEL` button on the board and move `UF2` file to opened USB storage.
+Connect `RP2040` to USB holding `BOOTSEL` button on the board and move `adafruit-circuitpython-raspberry_pi_pico-*.uf2` file to opened USB storage.
 
 ### Step 3
 Download latest [Adafruit CircuitPython Bundle](https://circuitpython.org/libraries) release (or see [files](files) folder).
@@ -40,8 +43,18 @@ Reboot the PC. It should be booted without additional interaction.
 The final installation result looks like this:
 ![installation](images/installation.jpg)
 
+## Reset
+To reset `RP2040` to the original state follow the next steps.
+
+### Step 1
+Download [flash_nuke](https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/circuitpython#flash-resetting-uf2-3083182) `UF2` file (or see [files](files) folder).
+
+### Step 2
+Connect `RP2040` to USB holding `BOOTSEL` button on the board and move `flash_nuke.uf2` file to opened USB storage. This will erase all files on the board.
+
 ## Reference
-[Dell Precision Tower 7810 Owner's Manual](https://dl.dell.com/content/manual26064352-dell-precision-tower-7810-owner-s-manual.pdf)
+- [Dell Precision Tower 7810 Owner's Manual](https://dl.dell.com/content/manual26064352-dell-precision-tower-7810-owner-s-manual.pdf)
+- [Raspberry Pi Pico and CircuitPython](https://cdn-learn.adafruit.com/downloads/pdf/getting-started-with-raspberry-pi-pico-circuitpython.pdf)
 
 ## Known issues
 - The solution is not working on reboot, since USB-ports are initialized only on first boot. Use a rear motherboard USB port, avoid powered hubs, expect full power-off between boots.
