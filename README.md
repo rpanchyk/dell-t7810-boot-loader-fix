@@ -19,16 +19,16 @@ The [Raspberry Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/)
 ![raspberry-pi-pico-rp2040](images/raspberry-pi-pico-rp2040.jpg)
 
 ### Step 1
-Download [CircuitPython](https://circuitpython.org/board/raspberry_pi_pico/) `UF2` release (or see [files](files) folder).
+Download latest [CircuitPython](https://circuitpython.org/board/raspberry_pi_pico/) `UF2` release (or see [files](files) folder).
 
 ### Step 2
 Connect `RP2040` to USB holding `BOOTSEL` button on the board and move `UF2` file to opened USB storage.
 
 ### Step 3
-Download [Adafruit CircuitPython Bundle](https://circuitpython.org/libraries) of appropriate release (or see [files](files) folder).
+Download latest [Adafruit CircuitPython Bundle](https://circuitpython.org/libraries) release (or see [files](files) folder).
 
 ### Step 4
-Unpack and copy `adafruit_hid` folder to `lib` folder on board.
+Unpack and copy `lib/adafruit_hid` folder to `lib` folder on board.
 
 ### Step 5
 Create `code.py` file in root folder of board with the following content:
@@ -71,7 +71,7 @@ The final installation result looks like this:
 [Dell Precision Tower 7810 Owner's Manual](https://dl.dell.com/content/manual26064352-dell-precision-tower-7810-owner-s-manual.pdf)
 
 ## Known issues
-- The solution is not working on reboot, since USB-ports are initialized only on first boot.
+- The solution is not working on reboot, since USB-ports are initialized only on first boot. Use a rear motherboard USB port, avoid powered hubs, expect full power-off between boots.
 
 ## Alternative solutions
 There are some alternative methods to fix the issue, like:
